@@ -1,0 +1,63 @@
+*{
+	box-sizing: border-box;
+}
+
+body{
+	background-color: #e6e6e6;
+	font-family: Arial, Helvetica, sans-serif;
+}
+
+.faq{
+	display: flex;
+	flex-direction: column;
+	padding: 20px;
+	justify-content: space-around;
+}
+
+input[type="checkbox"]{
+	display: none;
+}
+
+label {
+    display: block;    
+    padding: 8px 22px;
+    margin: 0 0 1px 0;
+    cursor: pointer;
+    background: #F2F2F2;
+    border-radius: 3px;
+    border-left:2px solid #0000ff; 
+    color: #000;
+    transition: ease .5s;
+	position: relative;
+}	
+
+label::after {
+	font-family: "Font Awesome 5 Free";
+	content: '\f078';
+	font-weight: bold;
+	font-size: 22px;
+	position: absolute;
+	right: 10px;
+	top: 6px;
+}
+
+input:checked + label::after {
+	content: '\f077';
+}
+
+.content {
+    background: #F2F2F2;
+    padding: 10px 25px;
+    border: 1px solid #A7A7A7;
+
+    margin: 0 0 10px 0;
+    border-radius: 3px;
+}
+
+input + label + .content {
+    display: none;
+}
+
+input:checked + label + .content {
+    display: block;
+}

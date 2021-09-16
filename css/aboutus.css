@@ -1,0 +1,11 @@
+iframe-container{
+	margin:20px;
+}
+
+iframe{
+	width: 100%;
+	border:none;
+	margin:0;
+	height:520px;
+	overflow: hidden;
+}

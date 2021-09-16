@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.2/css/all.css" integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay" crossorigin="anonymous">
+	<link rel="stylesheet" type="text/css" href="../css/profile.css">
+	<script type="text/javascript" src="../js/profile.js"></script>
+</head>
+<body>
+	<section class="form-container">
+		<form autocomplete="on">
+				<table>
+					<tr>
+						<td><label class="input-container" for="name">Name:</label></td>
+						<td><i class="far fa-user icon"></i>
+							<input type="text" name="fullname"  id="name" size="25">
+							<small>Error message</small>
+						</td>
+					</tr>
+
+					<tr>
+						<td><label class="input-container" for="email">Email</label></td>
+						<td><i class="fas fa-envelope icon"></i>
+							<input type="email" name="email" id="email" size="25" required>
+							<i class="fas fa-asterisk"></i>
+							<small>Error message</small>
+						</td>
+					</tr>
+
+					<tr>
+						<td><label class="input-container" for="mobile">Mobile No.</label></td>
+						<td><i class="fas fa-mobile-alt icon"></i>
+							<input type="tel" name="mobile" id="mobile" size="25" maxlength="10" minlength="10">
+							<small>Error message</small>
+						</td>
+					</tr>
+					
+					<tr>	
+						<td  colspan="2"><fieldset>
+							<legend>Gender</legend>
+								<label><input type="radio" name="gender" id="gender" value="male" checked> Male</label>
+								<label><input type="radio" name="gender" id="gender" value="female"> Female<br></label>
+						</fieldset></td>
+					</tr>
+
+					<tr>
+						<td><label class="input-container" for="dob">Date of Birth</label></td>
+						<td><i class="fas fa-calendar-alt icon"></i>
+							<input type="date" name="bday" id="dob" size="25">
+							<small>Error message</small>
+						</td>
+					</tr>
+				</table>
+			</form>
+			<button type="submit" name="Save" onclick="validate()">Save</button>
+	</section>
+</body>
+</html>

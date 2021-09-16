@@ -1,0 +1,137 @@
+*{
+	box-sizing: border-box;
+}
+
+body{
+	background-color: #e6e6e6;
+  	font-family: Arial, Helvetica, sans-serif;
+  	height: 100%;
+	margin: 0;
+}
+
+.tablink{
+	background-color: #fff;
+	color:black;
+	float: left;
+	border:none;
+	outline: none;
+	cursor: pointer;padding: 14px 16px;
+	font-size: 17px;	
+}
+
+.tablink:hover{
+	color: #001B66;
+}
+
+.date-wrapper{
+	display: flex-column;
+	justify-content: flex-start;
+	align-items: flex-start;
+}
+
+.tabcontent{
+	display: flex-column;
+	justify-content: flex-start;
+	display: none;
+	color: black;
+	height: 100%;
+	background-color: #fff;
+	border:1px solid #fff;
+	padding: 0;
+	margin:20px;
+}
+
+.showtimes{
+	display: flex;
+	justify-content:flex-start;
+	align-content: flex-start;
+	border-bottom: 1px solid #808080;
+	padding: 10px;
+}
+
+.showtimes button{
+	margin:10px;
+	padding: 10px;
+	border:1px solid #808080;
+	border-radius:10px;
+	background-color: transparent;
+	cursor: pointer;
+}
+
+/*.tabcontent{
+	color: black;
+	display: none;
+	height: 100%;
+	background-color: #fff;
+	border:1px solid #fff;
+	padding: 0;
+	margin:20px;
+
+}	
+
+.tabcontent td{
+	border-bottom: 1px solid #808080;
+	border-collapse: collapse;
+	border-right: none;
+	border-left:none;
+	padding: 15px; 
+}
+.tabcontent .showtimes{
+	table-layout: fixed;
+	width: 100%;
+}
+
+.tabcontent th{
+	text-align:start;
+	border-bottom: 1px solid #808080;
+}
+
+.tabcontent th a{
+	text-decoration: none;
+	color:black;
+}
+
+.tabcontent td button{
+	padding: 10px;
+	margin:1px;
+	border:1px solid #808080;
+	border-radius:10px;
+	background-color: transparent;
+	cursor: pointer;
+}*/
+
+#movie-banner{
+	background-color: #001B33;
+	color: #fff;
+	padding: 10px;
+}
+
+#movie-banner #info{
+	display: flex;
+	flex-direction: row;
+	justify-content: flex-start;
+	
+}
+
+#info h5{
+	padding:10px;
+	margin:10px;
+	border-radius: 25px;
+	border:1px solid #828282;
+}
+
+#legend {
+	list-style-type: none;
+	display: flex;
+	flex-direction: row;
+	justify-content: flex-end;
+	font-size: 12px;
+	color:#808080;
+	background-color: #fff;
+}
+
+li{
+	padding: 8px;
+	margin:10px;
+}
+

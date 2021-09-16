@@ -1,0 +1,113 @@
+*{
+	box-sizing: border-box;
+}
+
+.fa-asterisk{
+	color: #ff0000;
+	font-size: 8px;
+	vertical-align: top;
+}
+
+.form-container{
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	margin:40px;
+}
+
+button[type=submit]{
+	background-color: #001B66;
+	color: white;
+	padding: 15px 30px;
+	border:none;
+	margin:30px;	
+	cursor: pointer;
+	
+}
+
+input[type="checkbox"]{
+	padding: 10px;
+	margin:10px;
+}
+
+input[type="date"]
+{
+  padding: 10px 10px;
+}
+
+fieldset{
+	border-color: #fff;
+	padding: 20px;
+}
+
+.icon{
+	padding: 10px;
+	background-color: #001B66;
+	color: white;
+	float:left;
+	min-width: 50px;
+	text-align: center;
+	display: inline-block;
+}
+
+table, tr,td{
+	padding: 10px;
+}
+
+.current_btn{
+	border-bottom: 1px solid #001B66;
+}
+
+meter{
+	 background:none;
+	 background-color: transparent;
+	 box-shadow: 0 5px 5px -5px #333 inset;
+	 min-width:250px;
+	 min-height: 5px;
+	 margin-left:20px;
+	 border-radius: 6px;
+	 border:1px solid #f2f2f2;
+}
+
+.fa-info-circle{
+	margin-left: 10px;
+}
+
+small{
+	visibility: hidden;
+}
+
+.error input{
+	border: 1px solid #ff0000;
+	padding:7px;
+	border-radius:2px;
+}
+
+.error small{
+	visibility: visible;
+	color: #ff0000;
+}
+
+.tooltip {
+  position: relative;
+  display: inline-block;
+}
+
+.tooltip:hover .tooltiptext{
+	visibility: visible;
+}
+
+.tooltiptext{
+  visibility: hidden;
+  width: 300px;
+  background-color: #fff;
+  color: #000;
+  box-shadow: 5px 5px 5px grey;	
+  border-radius: 6px;
+  padding: 5px 0;
+  border:1px solid grey;
+
+  /* Position the tooltip */
+  position: absolute;
+  z-index: 1;
+}
