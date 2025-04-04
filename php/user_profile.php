@@ -48,7 +48,7 @@
    		echo '<script>
    		$(document).ready(function(){
   		$(".sidenav h3").text("Hi ' .$_SESSION['username']. '");
-		});</script>'
+		});</script>';
 		}
 	?>
 

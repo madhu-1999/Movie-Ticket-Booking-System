@@ -1,7 +1,9 @@
-create database movie_booking;
+create database if not exists movie_booking;
 use movie_booking;
 
-drop table movies;
+drop table if exists movie_genre;
+drop table if exists movies;
+
 CREATE TABLE IF NOT EXISTS movies(
 mid INT AUTO_INCREMENT,
 mname VARCHAR(40) NOT NULL,
@@ -14,7 +16,7 @@ synopsis TEXT NOT NULL,
 lang varchar(20) NOT NULL,
 PRIMARY KEY(mid)
 );
-drop table movie_genre;
+
 CREATE TABLE IF NOT EXISTS movie_genre(
 mid INT NOT NULL,
 genre VARCHAR(20) NOT NULL,
@@ -28,7 +30,7 @@ insert into movie_genre values(1,"Thriller");
 insert into movies values(2,"Thappad","022200","U","2020-02-28","https://drive.google.com/uc?id=1GCo4ws6VoStFmdWuFsz-GFHlUcHU7WJi","https://drive.google.com/uc?id=1sVKsSDoef2oZRr-1G4b5swLzMQFpIRXk","Thappad is a story of a woman who decides to stand up for herself even if it means it's against her family, her husband and generations of mental conditioning. A slap forms the catalyst for her journey and a metaphor for the stories of many other women caught up in different versions of the same problem.","Hindi");
 insert into movie_genre values(2,"Drama");
 
-insert into movies values(3,"Shubh Mangal Zyada Savdhan","020000","UA","2020-02-21","https://drive.google.com/uc?id=1nG9oZx2oOeXgs-AHGhz4MpHrxW9chgcv","Presenting the life of two gay men who are in love, Shubh Mangal Zyada Saavdhan depicts their struggle to convince their families to accept the relationship. But things are never as easy as they seem and one of the boy's family decides to get him married to a girl. Will their 'unconventional' love prevail?","Hindi");
+insert into movies values(3,"Shubh Mangal Zyada Savdhan","020000","UA","2020-02-21","https://drive.google.com/uc?id=1nG9oZx2oOeXgs-AHGhz4MpHrxW9chgcv","","Presenting the life of two gay men who are in love, Shubh Mangal Zyada Saavdhan depicts their struggle to convince their families to accept the relationship. But things are never as easy as they seem and one of the boy's family decides to get him married to a girl. Will their 'unconventional' love prevail?","Hindi");
 insert into movie_genre values(3,"Comedy");
 insert into movie_genre values(3,"Drama");
 insert into movie_genre values(3,"Romance");
@@ -41,7 +43,8 @@ insert into movie_genre values(4,"Animation");
 insert into movies values(5,"Little Women","021700","U","2020-02-07","https://drive.google.com/uc?id=1WxPGSTTeGUYwKCV8Dbkcv48H81BuR0Hy","https://drive.google.com/uc?id=1PUP0M3wrlwyLqrhGzAqTVLUVSWfFDjey","Writer-director Greta Gerwig (Lady Bird) has crafted a Little Women that draws on both the classic novel and the writings of Louisa May Alcott, and unfolds as the author's alter ego, Jo March, reflects back and forth on her fictional life. In Gerwig's take, the beloved story of the March sisters - four young women each determined to live life on her own terms - is both timeless and timely. Portraying Jo, Meg, Amy, and Beth March, the film stars Saoirse Ronan, Emma Watson, Florence Pugh, Eliza Scanlen, with Timothee Chalamet as their neighbor Laurie, Laura Dern as Marmee, and Meryl Streep as Aunt March.","English");
 insert into movie_genre values(5,"Drama");
 insert into movie_genre values(5,"Romance");
-drop table users;
+
+drop table if exists users;
 CREATE TABLE users (
     id INT NOT NULL PRIMARY KEY AUTO_INCREMENT,
     email VARCHAR(50) NOT NULL UNIQUE,
@@ -56,7 +59,7 @@ insert into users(email,password,username,security_ques,security_ans) values ('d
 insert into users(email,password,username,security_ques,security_ans) values ('ghi@gmail.com','@sAp0123','Kriti','What primary school did you attend?','Bishops');
 insert into users(email,password,username,security_ques,security_ans) values ('jkl@gmail.com','@sAp0123','Harun','What primary school did you attend?','Bishops');
 
-drop table showtimes;
+drop table if exists showtimes;
 CREATE TABLE showtimes (
 sid INT PRIMARY KEY,
 mid INT NOT NULL REFERENCES movies(mid),
@@ -72,7 +75,7 @@ INSERT INTO `showtimes` (`sid`,`mid`,`theatre`,`show_date`,`show_time`,`status`)
 INSERT INTO `showtimes` (`sid`,`mid`,`theatre`,`show_date`,`show_time`,`status`) VALUES (31,3,"CiNExt-Pacific Mall","2020-12-06","16:25:44","Available"),(32,2,"CiNExt-Pavillion Mall","2020-12-08","12:11:29","Available"),(33,4,"CiNExt-Seasons Mall","2020-12-06","20:33:11","Available"),(34,3,"CiNExt-Pacific Mall","2020-12-09","20:47:28","Available"),(35,4,"CiNExt-Pavillion Mall","2020-12-08","17:52:48","Available"),(36,3,"CiNExt-Pavillion Mall","2020-12-08","09:34:41","Available"),(37,3,"CiNExt-Seasons Mall","2020-12-09","13:09:13","Available"),(38,5,"CiNExt-Seasons Mall","2020-12-08","05:37:23","Available"),(39,3,"CiNExt-Seasons Mall","2020-12-08","18:24:55","Available"),(40,1,"CiNExt-Pavillion Mall","2020-12-09","21:42:15","Available");
 INSERT INTO `showtimes` (`sid`,`mid`,`theatre`,`show_date`,`show_time`,`status`) VALUES (41,4,"CiNExt-Pavillion Mall","2020-12-07","01:07:01","Available"),(42,4,"CiNExt-Seasons Mall","2020-12-08","19:18:00","Available"),(43,5,"CiNExt-Pavillion Mall","2020-12-05","22:05:00","Available"),(44,3,"CiNExt-Pacific Mall","2020-12-05","04:42:07","Available"),(45,3,"CiNExt-Pacific Mall","2020-12-09","10:21:36","Available"),(46,4,"CiNExt-Seasons Mall","2020-12-09","00:42:05","Available"),(47,3,"CiNExt-Seasons Mall","2020-12-07","17:29:22","Available"),(48,1,"CiNExt-Pacific Mall","2020-12-05","08:18:58","Available"),(49,4,"CiNExt-Seasons Mall","2020-12-08","20:43:06","Available"),(50,1,"CiNExt-Bund Garden","2020-12-08","15:21:08","Available");
 
-drop table seat_type;
+drop table if exists seat_type;
 CREATE TABLE seat_type(
 sid INT NOT NULL REFERENCES showtimes(sid),
 type VARCHAR(20) NOT NULL,
@@ -231,7 +234,8 @@ insert into seat_type values(49,'Silver',250);
 insert into seat_type values(50,'Platinum',450);
 insert into seat_type values(50,'Gold',323);
 insert into seat_type values(50,'Silver',150);
-drop table seat_reserved;
+
+drop table if exists seat_reserved;
 CREATE TABLE seat_reserved(
   row_no CHAR(1) NOT NULL,
   col_no INT NOT NULL,
@@ -292,7 +296,7 @@ INSERT INTO `seat_reserved` (`row_no`,`col_no`,`sid`) VALUES ("D",7,35);
 INSERT INTO `seat_reserved` (`row_no`,`col_no`,`sid`) VALUES ("I",9,33);
 INSERT INTO `seat_reserved` (`row_no`,`col_no`,`sid`) VALUES ("E",5,13);
 INSERT INTO `seat_reserved` (`row_no`,`col_no`,`sid`) VALUES ("E",8,27);
-INSERT INTO `seat_reserved` (`row_no`,`col_no`,`sid`) VALUES ("E",8,27);
+INSERT INTO `seat_reserved` (`row_no`,`col_no`,`sid`) VALUES ("E",8,1);
 INSERT INTO `seat_reserved` (`row_no`,`col_no`,`sid`) VALUES ("B",13,36);
 INSERT INTO `seat_reserved` (`row_no`,`col_no`,`sid`) VALUES ("I",9,44);
 INSERT INTO `seat_reserved` (`row_no`,`col_no`,`sid`) VALUES ("H",7,9);
@@ -341,7 +345,7 @@ INSERT INTO `seat_reserved` (`row_no`,`col_no`,`sid`) VALUES ("D",15,44);
 INSERT INTO `seat_reserved` (`row_no`,`col_no`,`sid`) VALUES ("G",12,16);
 
 
-drop table booking;
+drop table if exists booking;
 CREATE TABLE booking(
 bid INT PRIMARY KEY AUTO_INCREMENT,
 user_id INT REFERENCES users(id),

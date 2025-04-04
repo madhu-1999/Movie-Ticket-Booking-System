@@ -70,7 +70,7 @@ if(isset($_SESSION["loggedin"]) && $_SESSION["loggedin"] === true){
   		$(".logo form").append("'.$val.'");
   		$(".sidenav h3").text("Hi ' .$_SESSION['username']. '");
   		$(".fa-user-circle").css({"float":"right","margin-left":"490px"});
-});</script>'
+});</script>';
 
 }
 	?>
@@ -102,7 +102,7 @@ if(isset($_SESSION["loggedin"]) && $_SESSION["loggedin"] === true){
 					echo '<input type="checkbox" id="genre" name="' .$row['genre']. '" value="'.$row['genre'].'">'.$row['genre'].'<br>';
 				}
 				echo '</form></div></div></aside>';
-				echo '<div class="card-listing-wrapper" style="min-height:400px;">'
+				echo '<div class="card-listing-wrapper" style="min-height:400px;">';
 				$query = "select mid,mname,image,rating,group_concat(genre) as genre,lang from movie_genre join movies using(mid)where mname like '%" .$search. "%' group by mid";
 				$result = mysqli_query($conn,$query);
 				$rowcount = mysqli_num_rows($result);

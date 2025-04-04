@@ -1,4 +1,4 @@
- <?php
+<?php
  require_once "config.php";
  // Initialize the session
 session_start();
@@ -70,7 +70,7 @@ if(isset($_SESSION["loggedin"]) && $_SESSION["loggedin"] === true){
   		$(".logo form").append("'.$val.'");
   		$(".sidenav h3").text("Hi ' .$_SESSION['username']. '");
   		$(".fa-user-circle").css({"float":"right","margin-left":"490px"});
-});</script>'
+});</script>';
 
 }
 	?>

@@ -72,7 +72,7 @@ if(isset($_SESSION["loggedin"]) && $_SESSION["loggedin"] === true){
   		$(".logo form").append("'.$val.'");
   		$(".sidenav h3").text("Hi ' .$_SESSION['username']. '");
   		$(".fa-user-circle").css({"float":"right","margin-left":"490px"});
-});</script>'
+});</script>';
 
 }
 	?>
@@ -82,7 +82,7 @@ if(isset($_SESSION["loggedin"]) && $_SESSION["loggedin"] === true){
 		$val = $_GET['val'];
 		//page heading
 		echo '<p style="margin-left:10px;font-size:25px;color:#000;">' .$key. ' : "' .$val. ' "</p>';
-				echo '<div class="card-wrapper"><aside class="aside" style="flex-basis:300px;">'
+				echo '<div class="card-wrapper"><aside class="aside" style="flex-basis:300px;">';
 				$counter =0;
 				$sql = "select distinct(lang) from movies";
 				mysqli_query($conn,$sql) or die("Error querying database");
@@ -106,7 +106,7 @@ if(isset($_SESSION["loggedin"]) && $_SESSION["loggedin"] === true){
 					echo '<input type="checkbox" id="genre" name="' .$row['genre']. '" value="'.$row['genre'].'">'.$row['genre'].'<br>';
 				}
 				echo '</form></div></div></aside>';
-				echo '<div class="card-listing-wrapper">'
+				echo '<div class="card-listing-wrapper">';
 				if($key=='genre'){ //all genres need to be searched.
 					$query = "select mid,mname,image,rating,genre,lang from movie_genre join movies using(mid) where " .$key. " = '" .$val. "'";
 				}

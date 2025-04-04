@@ -1,14 +1,10 @@
 <?php
-$servername = "localhost";
-$username = "root";
-$password = "@sAp0123";
+$servername = "db";
+$username = "movie_user";
+$password = "userpassword";
 $db = "movie_booking";
-
-// Create connection
-$conn = new mysqli($servername, $username, $password,$db);
-
-// Check connection
+$conn = new mysqli($servername, $username, $password, $db);
 if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);
 }
-?> 
+?>

@@ -1,0 +1,39 @@
+version: '3.8'
+
+services:
+  db:
+    image: mysql:8.0
+    container_name: movie-booking-db
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: rootpassword
+      MYSQL_DATABASE: movie_booking
+      MYSQL_USER: movie_user
+      MYSQL_PASSWORD: userpassword
+    ports:
+      - "3306:3306"
+    volumes:
+      - mysql_data:/var/lib/mysql
+      - ./movie_booking.sql:/docker-entrypoint-initdb.d/movie_booking.sql
+    command: >
+      bash -c "docker-entrypoint.sh mysqld & sleep 10 && 
+      mysql -u root -prootpassword movie_booking < /docker-entrypoint-initdb.d/movie_booking.sql && 
+      wait"
+  php:
+    build:
+      context: .
+      dockerfile: Dockerfile.yml  # Assuming your PHP Dockerfile is named 'Dockerfile'
+    container_name: movie-booking-php
+    ports:
+      - "8080:80" # Maps port 80 in container to 8080 on host
+    volumes:
+      - ./:/var/www/html/ # Mounts your current directory into the container
+    depends_on:
+      - db
+    environment:
+      MYSQL_HOST: db
+      MYSQL_USER: movie_user
+      MYSQL_PASSWORD: userpassword
+      MYSQL_DATABASE: movie_booking
+volumes:
+  mysql_data:
